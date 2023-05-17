@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+
+<head>
+    <title>Démo :: TIM-2W2 :: Épreuve finale</title>
+    <meta charset="UTF-8" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" sizes="all">
+
+    <!-- Ajustement de la taille du viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Polices de caractères utilisées-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        font-family: 'Roboto Slab', serif;
+        font-weight: 900;
+        font-size: 2rem;
+        color: #333;
+        text-align: center;
+        margin: 1rem;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav li {
+        display: inline-block;
+        padding: 1rem;
+        background-color: #eee;
+        border-radius: 0.5rem 0.5rem 0 0;
+        cursor: pointer;
+      }
+
+      nav li.active {
+        background-color: #333;
+        color: white;
+      }
+
+      nav li:hover {
+        background-color: #063;
+        color: white;
+      }
+
+      div.contenu {
+        border: 5px solid #333;
+        border-radius: 0 0 0.5rem 0.5rem;
+        padding: 1rem;
+        margin: 0 2rem 2rem 2rem;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+</head>
+
+<body>
+  <h2>Démo :: Examen final</h2>
+  
+  <nav>
+    <ul>
+      <li data-question="1" class="active">Question 1</li>
+      <li data-question="2">Question 2</li>
+      <li data-question="3">Question 3</li>
+      <li data-question="4">Question 4</li>
+      <li data-question="5">Question 5</li>
+      <li data-question="6">Question 6</li>
+      <li data-question="7">Question 7</li>
+      <li data-question="8">Question 8</li>
+      <li data-question="9">Question 9</li>
+      <li data-question="10">Question 10</li>
+    </ul>
+  </nav>
+  
+  <div class="contenu">
+    <img src="images/question1.gif" alt="démo">
+  </div>
+  
+  <script>
+    document.querySelectorAll('nav li').forEach(li => {
+      li.addEventListener('click', e => {
+        document.querySelector('nav li.active').classList.remove('active')
+        e.target.classList.add('active')
+        document.querySelector('img').src = `images/question${e.target.dataset.question}.gif`
+      })
+    } );
+
+
+  </script>
+</body>
+
+</html>
